@@ -1,0 +1,19 @@
+clc
+I=load('image/f256.dat');
+imshow(I,[0,255]);
+[r c]=size(I);
+output=zeros(r,c);
+a=input('Enter new value of lower level : ');
+b=input('Enter new value of higher level : ');
+for i=1:r
+    for j=1:c
+        x=I(i,j);
+        if(x<a | x>b)
+            x=0;
+        else
+            x=255;
+        end;      
+        output(i,j)=x;   
+    end;
+end;
+figure, imshow(output,[0,255]);
